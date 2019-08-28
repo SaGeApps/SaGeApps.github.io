@@ -146,34 +146,41 @@
       var contactSubject = $('#contactForm #contactSubject').val();
       var contactMessage = $('#contactForm #contactMessage').val();
 
-      var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
+      // var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
+               // '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
 
-      $.ajax({
+      // var data = 'mailto:contact@soorajantony.com?cc=' + contactEmail + '&subject=' + contactSubject + '&body=' + contactMessage
+      var data = "https://in.linkedin.com/in/soorajantony";
 
-	      type: "POST",
-	      url: "inc/sendEmail.php",
-	      data: data,
-	      success: function(msg) {
+      // alert(data)
+      // window.location.href = data;
 
-            // Message was sent
-            if (msg == 'OK') {
+
+      // $.ajax({
+
+	     //  type: "POST",
+	     //  url: "inc/sendEmail.php",
+	     //  data: data,
+	     //  success: function(msg) {
+
+      //       // Message was sent
+      //       if (msg == 'OK') {
+      //          $('#image-loader').fadeOut();
+      //          $('#message-warning').hide();
+      //          $('#contactForm').fadeOut();
+      //          $('#message-success').fadeIn();   
+      //       }
+      //       // There was an error
+      //       else {
                $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
-            }
-            // There was an error
-            else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
-            }
+      //          $('#message-warning').html(msg);
+	     //        $('#message-warning').fadeIn();
+      //       }
 
-	      }
+	     //  }
 
-      });
-      return false;
+      // });
+      return true;
    });
 
 

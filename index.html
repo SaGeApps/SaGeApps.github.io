@@ -292,12 +292,13 @@ During his free time he researches and helps fellow tech inspirants on online fo
             <div class="eight columns">
 
                <!-- form -->
-               <form action="" method="post" id="contactForm" name="contactForm">
+
+               <form action="https://wa.me/00919961981254" method="get" id="contactForm" name="contactForm">
 					<fieldset>
 
-                  <div>
+<!--                   <div>
 						   <label for="contactName">Name <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
+						   <input type="text" value="" size="35" id="name" name="contactName">
                   </div>
 
                   <div>
@@ -309,14 +310,14 @@ During his free time he researches and helps fellow tech inspirants on online fo
 						   <label for="contactSubject">Subject</label>
 						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
                   </div>
-
+ -->
                   <div>
-                     <label for="contactMessage">Message <span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                     <label for="text">Message <span class="required">*</span></label>
+                     <textarea cols="50" rows="15" id="text" name="text"></textarea>
                   </div>
 
                   <div>
-                     <button class="submit">Submit</button>
+                     <button class="submit" onclick="">Whatsapp Message to SaGe</button>
                      <span id="image-loader">
                         <img alt="" src="images/loader.gif">
                      </span>
@@ -342,10 +343,9 @@ During his free time he researches and helps fellow tech inspirants on online fo
 					   <h4>Contact </h4>
 					   <p class="address">
 			<span>Sooraj George Antony Varghese</span><br>
-			<span>soorajantony@live.in</span><br>
-			<span>me@soorajantony.com</span><br>
-			<span>+91 (996)1981-1254</span><br>
-			<span>me@soorajantony.com</span>
+         <span><a href="tel:+918075528191">Click to call</a></span><br>
+			<span><a href="https://wa.me/00919961981254?text=Hey%2c%20I%20was%20referred%20here%20from%20your%20website.">Ping me on whatsapp!</a></span><br>
+         <span><a href="mailto:contact@soorajantony.com">contact@soorajantony.com</a></span>
 					   </p>
 
 				   </div>
@@ -400,7 +400,18 @@ During his free time he researches and helps fellow tech inspirants on online fo
    <script src="js/jquery.fittext.js"></script>
    <script src="js/magnific-popup.js"></script>
    <script src="js/init.js"></script>
-<script>document.getElementsByClassName("copyright")[0].remove();</script>
+
+   <script type="text/javascript">$(document).ready(function(){
+   var $form = $('contactForm');
+   $form.submit(function(){
+         $.post($(this).attr('action'), $(this).serialize(), function(response){
+               alert("Hello! I am an alert box!!");
+         },'json');
+         return false;
+      });
+   });
+   </script>
+   <script>document.getElementsByClassName("copyright")[0].remove();</script>
 
 </body>
 
